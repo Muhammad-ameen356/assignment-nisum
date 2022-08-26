@@ -11,9 +11,8 @@ import {
 } from "@chakra-ui/react";
 
 import React from "react";
-import { userList } from "../../constant/list.constant";
 import ListHOC from "./ListHOC";
-const UserList = () => {
+const UserList = ({ data }) => {
   return (
     <>
       <Heading fontSize="3xl" style={{ textDecoration: "underline" }}>
@@ -32,7 +31,7 @@ const UserList = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {userList?.map((item, ind) => {
+            {data?.map((item, ind) => {
               return (
                 <Tr key={item.id}>
                   <Td>{item.id}</Td>
@@ -52,4 +51,4 @@ const UserList = () => {
   );
 };
 
-export default ListHOC(UserList);
+export default UserList;

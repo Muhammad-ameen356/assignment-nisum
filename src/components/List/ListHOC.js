@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const ListHOC = (OrignalComponent) => {
+const ListHOC = (OrignalComponent, data) => {
   const NewComponent = () => {
-    return <OrignalComponent />;
+    return <OrignalComponent data={data} />;
   };
   return NewComponent;
 };

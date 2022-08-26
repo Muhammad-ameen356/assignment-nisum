@@ -1,4 +1,6 @@
 import {
+  Heading,
+  Link,
   Table,
   TableContainer,
   Tbody,
@@ -6,14 +8,10 @@ import {
   Th,
   Thead,
   Tr,
-  Heading,
-  Link,
 } from "@chakra-ui/react";
-
 import React from "react";
-import { userList, productList } from "../../constant/list.constant";
-import ListHOC from "./ListHOC";
-const ProductList = () => {
+
+const ProductList = ({ data }) => {
   return (
     <>
       <Heading fontSize="3xl" style={{ textDecoration: "underline" }} mt={10}>
@@ -34,7 +32,7 @@ const ProductList = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {productList?.map((item, ind) => {
+            {data?.map((item, ind) => {
               return (
                 <Tr key={item.id}>
                   <Td>{item.id}</Td>
@@ -58,4 +56,4 @@ const ProductList = () => {
   );
 };
 
-export default ListHOC(ProductList);
+export default ProductList;
